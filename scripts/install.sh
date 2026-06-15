@@ -37,6 +37,8 @@ cp "$ROOT_DIR/skills/rarebox-provider-integration/SKILL.md" "$PROFILE_DIR/skills
 cp "$ROOT_DIR/repo/AGENTS.md" "$RAREBOX_REPO/AGENTS.md"
 mkdir -p "$RAREBOX_REPO/scripts/evals"
 cp -R "$ROOT_DIR/evals/." "$RAREBOX_REPO/scripts/evals/"
+mkdir -p "$RAREBOX_REPO/scripts/smoke"
+cp -R "$ROOT_DIR/smoke/." "$RAREBOX_REPO/scripts/smoke/"
 
 ENV_FILE="$PROFILE_DIR/.env"
 if [ -f "$ENV_FILE" ]; then
@@ -63,6 +65,13 @@ if (!pkg.scripts['eval:harness']) {
   console.log('Added npm script: eval:harness')
 } else {
   console.log('npm script already present: eval:harness')
+}
+if (!pkg.scripts['smoke:browser']) {
+  pkg.scripts['smoke:browser'] = 'node scripts/smoke/browser-smoke.mjs'
+  fs.writeFileSync(path, JSON.stringify(pkg, null, 2) + '\n')
+  console.log('Added npm script: smoke:browser')
+} else {
+  console.log('npm script already present: smoke:browser')
 }
 NODE
 

@@ -10,6 +10,7 @@ This repo intentionally contains no secrets. It stores identity, project rules, 
 - Rarebox provider integration skill: `skills/rarebox-provider-integration/SKILL.md`
 - Repo-level coding-agent rules: `repo/AGENTS.md`
 - Harness eval scripts: `evals/`
+- Browser smoke scripts: `smoke/`
 - Installer: `scripts/install.sh`
 
 ## Quick rebuild
@@ -50,8 +51,9 @@ rarebox chat
 5. Copies the provider skill into `~/.hermes/profiles/rarebox/skills/rarebox-provider-integration/SKILL.md`.
 6. Copies `repo/AGENTS.md` into the Rarebox repo.
 7. Copies `evals/` into `<rarebox repo>/scripts/evals/`.
-8. Removes Telegram/social token lines from the rarebox profile `.env` so it cannot accidentally run as Nova.
-9. Adds `eval:harness` to the Rarebox `package.json` if missing.
+8. Copies `smoke/` into `<rarebox repo>/scripts/smoke/`.
+9. Removes Telegram/social token lines from the rarebox profile `.env` so it cannot accidentally run as Nova.
+10. Adds `eval:harness` and `smoke:browser` to the Rarebox `package.json` if missing.
 
 ## Verification
 
