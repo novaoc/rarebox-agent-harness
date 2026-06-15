@@ -40,6 +40,6 @@ runEval('provider shape registry', () => {
   }
 
   ok(`available TCGs covered: ${available.join(', ')}`)
-  ok(`browse providers: ${providerKeys.join(', ')}`)
-  ok(`search providers: ${searchKeys.join(', ')}`)
+  ok(`browse providers: ${providerKeys.filter(k => browseGames.includes(k)).join(', ')}`)
+  ok(`search providers: ${searchKeys.filter(k => available.includes(k)).join(', ')}`)
 })
