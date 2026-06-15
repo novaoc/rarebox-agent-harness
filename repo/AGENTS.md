@@ -30,9 +30,9 @@ Do not modify unrelated files. Do not remove features without explicit direction
 
 ## Canonical References
 
-- Product/design docs: https://github.com/novaoc/rarebox-docs
+- Product/design docs: the Rarebox documentation repository
 - Tactile design source: https://docs.rarebox.io/design/tactile
-- Main repo: https://github.com/novaoc/rarebox
+- Main repo: the Rarebox main app repository
 
 When docs and code disagree, inspect the live code and report the mismatch. Do not blindly follow stale docs.
 

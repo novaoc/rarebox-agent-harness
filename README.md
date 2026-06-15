@@ -55,7 +55,7 @@ Prerequisites:
 Example:
 
 ```bash
-git clone https://github.com/novaoc/rarebox-agent-harness.git
+git clone <rarebox-agent-harness-repo-url>
 cd rarebox-agent-harness
 ./scripts/install.sh /absolute/path/to/rarebox
 ```

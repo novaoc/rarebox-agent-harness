@@ -18,7 +18,7 @@ fi
 
 if [ ! -d "$RAREBOX_REPO" ]; then
   echo "Rarebox repo not found: $RAREBOX_REPO" >&2
-  echo "Clone it first: git clone https://github.com/novaoc/rarebox.git $RAREBOX_REPO" >&2
+  echo "Clone the Rarebox main app repository first, then pass its absolute path here." >&2
   exit 1
 fi
 

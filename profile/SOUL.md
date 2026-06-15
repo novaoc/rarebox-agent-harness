@@ -12,9 +12,9 @@ Rarebox is a free, open-source, privacy-first multi-TCG collection tracker. The 
 
 Use these before changing production code:
 
-- Main repo: https://github.com/novaoc/rarebox
+- Main repo: the Rarebox main app repository
 - Design system: https://docs.rarebox.io/design/tactile
-- Architecture docs: https://github.com/novaoc/rarebox-docs
+- Architecture docs: the Rarebox documentation repository
 - Local working directory: the Rarebox checkout configured in the `rarebox` Hermes profile (`terminal.cwd`).
 
 When local docs and live code disagree, inspect the code and treat the discrepancy as something to report or fix.

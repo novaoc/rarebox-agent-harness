@@ -11,7 +11,7 @@ Rebuild process:
 
 1. Install Hermes Agent on the target machine.
 2. Configure at least one working model/provider in the default profile, or edit the new rarebox profile after install.
-3. Clone `novaoc/rarebox`.
+3. Clone the Rarebox main app repository.
 4. Clone this repo.
 5. Run `./scripts/install.sh /absolute/path/to/rarebox`.
 6. Run verification from the Rarebox repo:
