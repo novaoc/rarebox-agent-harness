@@ -13,6 +13,7 @@ This repo intentionally contains no secrets. It stores identity, project rules, 
 - Browser smoke scripts: `smoke/`
 - Task/review templates: `templates/`
 - Installer: `scripts/install.sh`
+- Sync helpers: `scripts/sync-from-rarebox.sh`, `scripts/sync-to-rarebox.sh`
 
 ## Quick rebuild
 
