@@ -39,6 +39,8 @@ mkdir -p "$RAREBOX_REPO/scripts/evals"
 cp -R "$ROOT_DIR/evals/." "$RAREBOX_REPO/scripts/evals/"
 mkdir -p "$RAREBOX_REPO/scripts/smoke"
 cp -R "$ROOT_DIR/smoke/." "$RAREBOX_REPO/scripts/smoke/"
+mkdir -p "$RAREBOX_REPO/docs/harness/templates"
+cp -R "$ROOT_DIR/templates/." "$RAREBOX_REPO/docs/harness/templates/"
 
 ENV_FILE="$PROFILE_DIR/.env"
 if [ -f "$ENV_FILE" ]; then
@@ -65,6 +67,13 @@ if (!pkg.scripts['eval:harness']) {
   console.log('Added npm script: eval:harness')
 } else {
   console.log('npm script already present: eval:harness')
+}
+if (!pkg.scripts['eval:danger']) {
+  pkg.scripts['eval:danger'] = 'node scripts/evals/danger-zone.mjs'
+  fs.writeFileSync(path, JSON.stringify(pkg, null, 2) + '\n')
+  console.log('Added npm script: eval:danger')
+} else {
+  console.log('npm script already present: eval:danger')
 }
 if (!pkg.scripts['smoke:browser']) {
   pkg.scripts['smoke:browser'] = 'node scripts/smoke/browser-smoke.mjs'

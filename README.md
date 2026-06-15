@@ -11,6 +11,7 @@ This repo intentionally contains no secrets. It stores identity, project rules, 
 - Repo-level coding-agent rules: `repo/AGENTS.md`
 - Harness eval scripts: `evals/`
 - Browser smoke scripts: `smoke/`
+- Task/review templates: `templates/`
 - Installer: `scripts/install.sh`
 
 ## Quick rebuild
@@ -52,8 +53,9 @@ rarebox chat
 6. Copies `repo/AGENTS.md` into the Rarebox repo.
 7. Copies `evals/` into `<rarebox repo>/scripts/evals/`.
 8. Copies `smoke/` into `<rarebox repo>/scripts/smoke/`.
-9. Removes Telegram/social token lines from the rarebox profile `.env` so it cannot accidentally run as Nova.
-10. Adds `eval:harness` and `smoke:browser` to the Rarebox `package.json` if missing.
+9. Copies `templates/` into `<rarebox repo>/docs/harness/templates/`.
+10. Removes Telegram/social token lines from the rarebox profile `.env` so it cannot accidentally run as Nova.
+11. Adds `eval:harness`, `eval:danger`, and `smoke:browser` to the Rarebox `package.json` if missing.
 
 ## Verification
 

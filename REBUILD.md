@@ -16,6 +16,7 @@ Rebuild process:
 5. Run `./scripts/install.sh /path/to/rarebox`.
 6. Run verification from the Rarebox repo:
    - `npm run eval:harness`
+   - `npm run eval:danger`
    - `npm run build`
    - `npm run smoke:browser`
    - `rarebox -z "In two sentences, identify your role and state whether you are Nova. Do not use tools."`
