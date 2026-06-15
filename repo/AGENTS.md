@@ -32,7 +32,6 @@ Do not modify unrelated files. Do not remove features without explicit direction
 
 - Product/design docs: https://github.com/novaoc/rarebox-docs
 - Tactile design source: https://docs.rarebox.io/design/tactile
-- Engineering playbook: https://github.com/novaoc/engineering-playbook
 - Main repo: https://github.com/novaoc/rarebox
 
 When docs and code disagree, inspect the live code and report the mismatch. Do not blindly follow stale docs.

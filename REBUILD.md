@@ -19,9 +19,9 @@ Rebuild process:
    - `npm run eval:danger`
    - `npm run build`
    - `npm run smoke:browser`
-   - `rarebox -z "In two sentences, identify your role and state whether you are Nova. Do not use tools."`
+   - `rarebox -z "In two sentences, identify your role and scope. Do not use tools."`
 
 Optional:
 
 - If the rarebox profile needs its own Telegram bot, create a separate BotFather token and add it manually to `~/.hermes/profiles/rarebox/.env`.
-- Do not reuse Nova's Telegram/social tokens.
+- Do not reuse another profile's Telegram/social tokens.

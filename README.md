@@ -1,8 +1,36 @@
 # Rarebox Agent Harness
 
-Public rebuild kit for the `rarebox` Hermes profile: a non-Nova engineering agent for Rarebox.
+Public rebuild kit for the `rarebox` Hermes profile: a focused engineering agent for Rarebox.
 
 This repo intentionally contains no secrets. It stores identity, project rules, skills, and harness eval templates so the agent can be recreated on a new machine or Hermes install.
+
+## Compatibility
+
+This harness was made for **Hermes Agent**. The full installer (`scripts/install.sh`) assumes Hermes profiles, Hermes config commands, and Hermes `SKILL.md` workflows.
+
+It can still be useful with **OpenClaw** or another coding agent if that agent can read project instructions and run shell commands:
+
+| Harness piece | Hermes | OpenClaw / other agents |
+| --- | --- | --- |
+| `profile/SOUL.md` identity | Installed into the `rarebox` Hermes profile | Use as manual system/context text if supported |
+| `skills/*/SKILL.md` | Native Hermes skills | Read manually as workflow docs; not auto-loaded unless the agent supports this format |
+| `repo/AGENTS.md` | Copied into Rarebox repo and read as repo rules | Copy into the Rarebox repo; most coding agents can use it as project instructions |
+| `evals/` | Copied to `scripts/evals/` and run with npm | Works normally; just run the npm scripts |
+| `smoke/` | Copied to `scripts/smoke/` and run with npm | Works normally; just run the npm scripts |
+| `templates/` | Copied to `docs/harness/templates/` | Works normally as Markdown templates |
+
+For OpenClaw-style use, copy the repo-facing files into Rarebox and tell the agent to read `AGENTS.md` before planning or editing:
+
+```bash
+./scripts/sync-to-rarebox.sh /absolute/path/to/rarebox
+cd /absolute/path/to/rarebox
+npm run eval:harness
+npm run eval:danger
+npm run build
+npm run smoke:browser
+```
+
+Then start OpenClaw in the Rarebox checkout and ask it to read `AGENTS.md` plus the relevant template in `docs/harness/templates/`. The Hermes profile installer is optional in that flow.
 
 ## What this installs
 
@@ -49,7 +77,7 @@ rarebox chat
 7. Copies `evals/` into `<rarebox repo>/scripts/evals/`.
 8. Copies `smoke/` into `<rarebox repo>/scripts/smoke/`.
 9. Copies `templates/` into `<rarebox repo>/docs/harness/templates/`.
-10. Removes Telegram/social token lines from the rarebox profile `.env` so it cannot accidentally run as Nova.
+10. Removes Telegram/social token lines from the rarebox profile `.env` so it cannot accidentally use another profile's messaging credentials.
 11. Adds `eval:harness`, `eval:danger`, and `smoke:browser` to the Rarebox `package.json` if missing.
 
 ## Verification
@@ -61,13 +89,13 @@ npm run eval:harness
 npm run eval:danger
 npm run build
 npm run smoke:browser
-rarebox -z "In two sentences, identify your role and state whether you are Nova. Do not use tools."
+rarebox -z "In two sentences, identify your role and scope. Do not use tools."
 ```
 
-Expected identity response: the agent says it is the Rarebox engineering agent and not Nova.
+Expected identity response: the agent says it is the Rarebox engineering agent focused on Rarebox development.
 
 ## Secrets policy
 
 Do not commit `.env`, tokens, session DBs, state DBs, backups, or Hermes profile runtime state. This repo is a template, not a profile dump.
 
-If a future Rarebox Telegram bot is desired, configure a separate bot token manually in `~/.hermes/profiles/rarebox/.env`. Do not reuse Nova's token.
+If a future Rarebox Telegram bot is desired, configure a separate bot token manually in `~/.hermes/profiles/rarebox/.env`. Do not reuse another profile's token.
