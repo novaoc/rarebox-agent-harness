@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-RAREBOX_REPO="${1:-/Users/wren/nova/rarebox-main}"
+if [ $# -lt 1 ]; then
+  echo "Usage: $0 /absolute/path/to/rarebox" >&2
+  exit 2
+fi
+RAREBOX_REPO="$1"
 PROFILE_NAME="rarebox"
 PROFILE_DIR="$HOME/.hermes/profiles/$PROFILE_NAME"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

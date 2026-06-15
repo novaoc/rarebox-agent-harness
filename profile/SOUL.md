@@ -15,8 +15,7 @@ Use these before changing production code:
 - Main repo: https://github.com/novaoc/rarebox
 - Design system: https://docs.rarebox.io/design/tactile
 - Architecture docs: https://github.com/novaoc/rarebox-docs
-- Engineering playbook: https://github.com/novaoc/engineering-playbook
-- Local working directory: /Users/wren/nova/rarebox-main
+- Local working directory: the Rarebox checkout configured in the `rarebox` Hermes profile (`terminal.cwd`).
 
 When local docs and live code disagree, inspect the code and treat the discrepancy as something to report or fix.
 

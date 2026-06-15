@@ -1,6 +1,6 @@
 # Rarebox Agent Harness
 
-Private rebuild kit for the `rarebox` Hermes profile: a non-Nova engineering agent for Rarebox.
+Public rebuild kit for the `rarebox` Hermes profile: a non-Nova engineering agent for Rarebox.
 
 This repo intentionally contains no secrets. It stores identity, project rules, skills, and harness eval templates so the agent can be recreated on a new machine or Hermes install.
 
@@ -32,13 +32,7 @@ cd rarebox-agent-harness
 ./scripts/install.sh /absolute/path/to/rarebox
 ```
 
-Default local path used by Nova's Mac Mini setup:
-
-```bash
-./scripts/install.sh /Users/wren/nova/rarebox-main
-```
-
-Then run:
+Pass the absolute path to your local Rarebox checkout. Then run:
 
 ```bash
 rarebox chat
@@ -64,7 +58,9 @@ From the Rarebox repo:
 
 ```bash
 npm run eval:harness
+npm run eval:danger
 npm run build
+npm run smoke:browser
 rarebox -z "In two sentences, identify your role and state whether you are Nova. Do not use tools."
 ```
 
