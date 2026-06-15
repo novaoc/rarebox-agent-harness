@@ -30,9 +30,9 @@ fi
 rarebox config set terminal.backend local
 rarebox config set terminal.cwd "$RAREBOX_REPO"
 
-mkdir -p "$PROFILE_DIR/skills/rarebox-provider-integration"
 cp "$ROOT_DIR/profile/SOUL.md" "$PROFILE_DIR/SOUL.md"
-cp "$ROOT_DIR/skills/rarebox-provider-integration/SKILL.md" "$PROFILE_DIR/skills/rarebox-provider-integration/SKILL.md"
+mkdir -p "$PROFILE_DIR/skills"
+cp -R "$ROOT_DIR/skills/." "$PROFILE_DIR/skills/"
 
 cp "$ROOT_DIR/repo/AGENTS.md" "$RAREBOX_REPO/AGENTS.md"
 mkdir -p "$RAREBOX_REPO/scripts/evals"
